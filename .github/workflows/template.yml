@@ -207,6 +207,12 @@ jobs:
           name: build-WebGL
           path: build
 
+      - name: Install Brotli
+        run: sudo apt-get install brotli
+
+      - name: Decompress .br files
+        run: find ./build -name "*.br" -exec brotli -d {} \;
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
