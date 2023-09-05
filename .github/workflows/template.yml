@@ -48,6 +48,7 @@ jobs:
         uses: game-ci/unity-test-runner@v2
         id: testRunner
         with:
+          projectPath: CampusRush
           testMode: ${{ matrix.testMode }}
           checkName: ${{ matrix.testMode }} test results
           githubToken: ${{ secrets.GITHUB_TOKEN }}
@@ -94,6 +95,7 @@ jobs:
 
       - uses: game-ci/unity-builder@v2
         with:
+          projectPath: CampusRush
           targetPlatform: WebGL
 
       - uses: actions/upload-artifact@v2
@@ -138,6 +140,7 @@ jobs:
 
       - uses: game-ci/unity-builder@v2
         with:
+          projectPath: CampusRush
           targetPlatform: StandaloneWindows64
 
       - uses: actions/upload-artifact@v2
@@ -182,6 +185,7 @@ jobs:
 
       - uses: game-ci/unity-builder@v2
         with:
+          projectPath: CampusRush
           targetPlatform: Android
 
       - uses: actions/upload-artifact@v2
